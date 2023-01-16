@@ -61,26 +61,26 @@ const checkNext = function () {
 let totalResults;
 //displayNew lấy tham số data
 function displayNew(data) {
-  totalResults = data.totalResults;
+  totalResults = data?.totalResults;
   checkPrev();
   checkNext();
   let html = "";
   //vòng lập for với data.articles để lấy ra từng bản tin
   //với items từng bản tin
-  data.articles.forEach((items) => {
+  data?.articles?.forEach((items) => {
     //lấy items gán vào html
     html += `<div class= 'py-2' style="width:100%">
     <div class="row p-2 border">
     <div class="col-md-4 "  >
       <img
-        src="${items.urlToImage ? items.urlToImage : null}"
+        src="${items?.urlToImage ? items?.urlToImage : null}"
         alt=""
         width="100%"
       />
     </div>
     <div class="col-md-8  ">
-      <h5>${items.title}</h5>
-      <p>${items.description ? items.description : ""}</p>
+      <h5>${items?.title}</h5>
+      <p>${items?.description ? items?.description : ""}</p>
       <a href="${items.url}" target="_blank" class="btn btn-primary">view</a>
     </div>
   </div>
